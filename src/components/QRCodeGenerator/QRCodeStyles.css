@@ -1,0 +1,387 @@
+:root {
+  /* Tema oscuro (predeterminado) */
+  --background: #2a2a72;
+  --text-color: #f5f5f5;
+  --border-color: #383838;
+  --accent-color: #009ffd;
+  --section-bg: #1a1a4a;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+/* .light-theme {
+  --background: #f5f5f5;
+  --text-color: #2a2a72;
+  --border-color: #dddddd;
+  --accent-color: #2a2a72;
+  --section-bg: #ffffff;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+} */
+
+/* Estructura principal */
+.qr-generator-container {
+  font-family: 'Arial', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  color: var(--text-color);
+}
+.qr-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.qr-title {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+/* Secciones */
+.qr-section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--section-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+/* Inputs y controles */
+.qr-input {
+  /* width: 100%; */
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--section-bg);
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.qr-input::placeholder {
+  color: #aaa;
+}
+
+/* Botones */
+.qr-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.dot-button {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--section-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1.2rem;
+}
+
+.dot-button:hover {
+  transform: scale(1.05);
+}
+
+.dot-button.active {
+  border: 2px solid var(--accent-color);
+  background-color: rgba(0, 159, 253, 0.1);
+  font-weight: bold;
+}
+
+/* Selector de colores */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.color-button {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid var(--section-bg);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-button:hover {
+  transform: scale(1.1);
+}
+.color-picker-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.color-picker {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--section-bg);
+  border: 1px solid var(--border-color);
+}
+
+.color-picker-solid{
+  width: 30%;
+}
+/* Degradados */
+.gradient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 1rem;
+}
+
+.gradient-button {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  border: 2px solid var(--section-bg);
+  cursor: pointer;
+}
+
+/* Previsualización */
+.qr-preview-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.qr-preview {
+  display: block;
+  position: fixed;
+  padding: 1rem;
+  /* background: white; */
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px dashed var(--border-color);
+}
+
+/* Toggle y controles */
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+/* Controles de degradado personalizado */
+.gradient-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gradient-color-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gradient-preview {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  border: 1px solid var(--border-color);
+}
+
+.gradient-type-selector {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.rotation-control {
+  margin: 1rem 0;
+}
+
+.rotation-control input[type="range"] {
+  width: 100%;
+}
+
+.full-gradient-preview {
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+/* Selector de archivo */
+.qr-file-input {
+  /* width: 100%; */
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--section-bg);
+  color: var(--text-color);
+}
+
+/* Controles de rotación */
+.rotation-control {
+  margin: 1rem 0;
+}
+
+.rotation-control input[type="range"] {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Mejoras para la previsualización del degradado */
+.full-gradient-preview {
+  height: 60px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+/* Controles de imagen */
+.image-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.slider-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.slider-control input[type="range"] {
+  width: 100%;
+}
+
+.remove-image-button {
+  padding: 0.5rem;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.remove-image-button:hover {
+  background-color: #ff4757;
+}
+
+/* Previsualización de imagen */
+.image-preview {
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 1rem;
+  border-radius: 4px;
+  border: 1px dashed var(--border-color);
+}
+
+/* Controles de fondo */
+.background-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.color-picker-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.color-text-input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background: var(--section-bg);
+  color: var(--text-color);
+  width: 100px;
+}
+/* Controles de fondo avanzados */
+.advanced-background-options {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.gradient-control, .pattern-control, .corner-control {
+  margin-bottom: 1.5rem;
+}
+
+.gradient-stops {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.gradient-stop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.apply-gradient-button {
+  padding: 0.5rem;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.pattern-item {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.pattern-item.active {
+  border-color: var(--accent-color);
+}
+
+.pattern-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.corner-control .slider-control {
+  margin-top: 0.5rem;
+}
+
+.toggle-advanced-button {
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  cursor: pointer;
+  text-align: left;
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.rotation-control {
+  margin-top: 1rem;
+}
+
+.gradient-control, .rotation-control {
+  margin-bottom: 1rem;
+}

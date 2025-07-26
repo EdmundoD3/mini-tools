@@ -1,0 +1,21 @@
+{
+  "name": "mini-tools",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "jimp": "^1.6.0",
+    "preact": "^10.26.9",
+    "qr-code-styling": "^1.9.2"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.2",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4"
+  }
+}
