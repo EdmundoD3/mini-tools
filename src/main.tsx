@@ -1,5 +1,12 @@
+// c:\Users\edoss\workspace\web\mini-tools\src\main.tsx
 import { render } from 'preact'
+import { LanguageProvider } from './context/LanguageContext'
 import './index.css'
-import { App } from './app.tsx'
+import { App } from './app'
 
-render(<App />, document.getElementById('app')!)
+render(
+  <LanguageProvider>
+    <App />
+  </LanguageProvider>,
+  document.getElementById('app')!
+)

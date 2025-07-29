@@ -1,5 +1,5 @@
 import type { Dispatch, StateUpdater } from "preact/hooks";
-import type { DotType, Options, Gradient } from "qr-code-styling";
+import type {Options, Gradient } from "qr-code-styling";
 export type TQRControls = {
   options: Options;
   setOptions: Dispatch<StateUpdater<Options>>;
@@ -10,7 +10,8 @@ export interface BackgroundPattern {
   url: string;
   thumbnail: string;
 }
-
+export const toRadians = (degrees: number) => degrees * (Math.PI / 180);
+export const toDegrees = (radians: number) => Math.floor(radians * (180 / Math.PI));
 export const backgroundPatterns: BackgroundPattern[] = [
   {
     name: "Puntos finos",
@@ -29,19 +30,7 @@ export const colorPresets = [
   '#feca57', '#5f27cd', '#ff9ff3', '#54a0ff'
 ];
 
-export type DotTypeOption = {
-  value: DotType;
-  label: string;
-  icon: string;
-};
 
-export const dotTypes: DotTypeOption[] = [
-  { value: 'square', label: 'Cuadrados', icon: '■' },
-  { value: 'dots', label: 'Puntos redondos', icon: '●' },
-  { value: 'rounded', label: 'Redondeados', icon: '🔘' },
-  { value: 'classy', label: 'Clásicos', icon: '♦' },
-  { value: 'classy-rounded', label: 'Clásicos redondeados', icon: '🟢' },
-];
 
 export const defaultOptions: Options = {
   width: 300,
@@ -63,12 +52,10 @@ export const defaultOptions: Options = {
 
 export const defaultGradient: Gradient = {
   type: 'linear',
-  rotation: 90,
+  rotation: toRadians(90),
   colorStops: [
     { offset: 0, color: '#2a2a72' },
     { offset: 1, color: '#009ffd' }
   ]
 };
 
-export const toRadians = (degrees: number) => degrees * (Math.PI / 180);
-export const toDegrees = (radians: number) => Math.floor(radians * (180 / Math.PI));

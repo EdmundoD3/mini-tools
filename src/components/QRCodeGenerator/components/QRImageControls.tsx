@@ -1,12 +1,15 @@
+import type { h } from 'preact';
 import { useRef } from 'preact/hooks';
-import type { TQRControls } from "./QRGeneratorUtils";
+import { useTranslation } from '../../../context/LanguageContext';
+import type { TQRControls } from "../QRGeneratorUtils";
 
 export function QRImageControls({ options, setOptions }: TQRControls) {
+  const { t } = useTranslation();
   // Referencia al input de archivo
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleImageUpload = (e: Event) => {
-    const file = (e.target as HTMLInputElement).files?.[0];
+  const handleImageUpload = (e: h.JSX.TargetedEvent<HTMLInputElement, Event>) => {
+    const file = e.currentTarget.files?.[0];
     if (!file) return;
 
     const reader = new FileReader();
@@ -24,24 +27,24 @@ export function QRImageControls({ options, setOptions }: TQRControls) {
     reader.readAsDataURL(file);
   };
 
-  const handleSizeChange = (e: Event) => {
-    const size = parseFloat((e.target as HTMLInputElement).value);
+  const handleSizeChange = (e: h.JSX.TargetedEvent<HTMLInputElement, Event>) => {
+    const size = parseFloat(e.currentTarget.value);
     setOptions({
       ...options,
       imageOptions: {
         ...options.imageOptions,
-        imageSize: size / 100
+        imageSize: size / 100,
       }
     });
   };
 
-  const handleMarginChange = (e: Event) => {
-    const margin = parseInt((e.target as HTMLInputElement).value);
+  const handleMarginChange = (e: h.JSX.TargetedEvent<HTMLInputElement, Event>) => {
+    const margin = parseInt(e.currentTarget.value);
     setOptions({
       ...options,
       imageOptions: {
         ...options.imageOptions,
-        margin: margin
+        margin: margin,
       }
     });
   };
@@ -58,9 +61,13 @@ export function QRImageControls({ options, setOptions }: TQRControls) {
     }
   };
 
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
+
   return (
     <div className="qr-section">
-      <h3>Logo (opcional)</h3>
+      <h3>{t('image_title')}</h3>
 
       <div className="image-controls">
         <input
@@ -68,13 +75,14 @@ export function QRImageControls({ options, setOptions }: TQRControls) {
           type="file"
           accept="image/*"
           onChange={handleImageUpload}
-          className="qr-file-input"
+          style={{ display: 'none' }} // Ocultamos el input real
+          aria-hidden="true"
         />
 
-        {options.image && (
-          <>
+        {options.image ? (
+          <div className="image-options">
             <div className="slider-control">
-              <label>Tamaño: {Math.round((options.imageOptions?.imageSize || 0.2) * 100)}%</label>
+              <label>{t('image_size_label', Math.round((options.imageOptions?.imageSize || 0.2) * 100))}</label>
               <input
                 type="range"
                 min="10"
@@ -85,7 +93,7 @@ export function QRImageControls({ options, setOptions }: TQRControls) {
             </div>
 
             <div className="slider-control">
-              <label>Margen: {options.imageOptions?.margin || 0}px</label>
+              <label>{t('image_margin_label', options.imageOptions?.margin || 0)}</label>
               <input
                 type="range"
                 min="0"
@@ -99,9 +107,13 @@ export function QRImageControls({ options, setOptions }: TQRControls) {
               onClick={handleRemoveImage}
               className="remove-image-button"
             >
-              Eliminar logo
+              {t('remove_image')}
             </button>
-          </>
+          </div>
+        ) : (
+          <button onClick={handleUploadClick} className="upload-image-button">
+            {t('upload_image')}
+          </button>
         )}
       </div>
     </div>

@@ -7,6 +7,7 @@
   --section-bg: #1a1a4a;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
 /* .light-theme {
   --background: #f5f5f5;
   --text-color: #2a2a72;
@@ -19,16 +20,18 @@
 /* Estructura principal */
 .qr-generator-container {
   font-family: 'Arial', sans-serif;
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 1rem;
   color: var(--text-color);
 }
+
 .qr-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 2rem;
 }
+
 .qr-title {
   text-align: center;
   color: var(--accent-color);
@@ -72,14 +75,19 @@
 }
 
 .dot-button {
+  box-sizing: border-box;
+  /* ✅ Estabiliza el tamaño */
   padding: 0.75rem 1rem;
   border-radius: 8px;
-  border: 1px solid var(--border-color);
+  border: 2px solid transparent;
+  /* ✅ Todos los botones tienen el mismo grosor */
   background-color: var(--section-bg);
   color: var(--text-color);
   cursor: pointer;
   transition: all 0.2s;
   font-size: 1.2rem;
+  font-weight: 500;
+  /* ✅ Fijo para todos */
 }
 
 .dot-button:hover {
@@ -87,9 +95,33 @@
 }
 
 .dot-button.active {
-  border: 2px solid var(--accent-color);
+  border-color: var(--accent-color);
+  /* ✅ Solo cambia el color, no el grosor */
   background-color: rgba(0, 159, 253, 0.1);
-  font-weight: bold;
+  /* font-weight eliminado o igual al resto para evitar saltos */
+}
+
+/* Estilos específicos para los botones de estilo de punto con imágenes */
+.dot-style-button {
+  padding: 0.5rem;
+  /* Reducimos el padding para que la imagen sea la protagonista */
+  width: 60px;
+  /* Ancho fijo */
+  height: 60px;
+  /* Alto fijo para que sean cuadrados */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot-style-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
 }
 
 /* Selector de colores */
@@ -112,25 +144,29 @@
 .color-button:hover {
   transform: scale(1.1);
 }
-.color-picker-container{
+
+.color-picker-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
+
 .color-picker {
-  width: 100%;
   height: 40px;
   border-radius: 8px;
   cursor: pointer;
   background: var(--section-bg);
   border: 1px solid var(--border-color);
+  grid-column: span 2;
+  width: 100%;
 }
 
-.color-picker-solid{
+.color-picker-solid {
   width: 30%;
 }
+
 /* Degradados */
 .gradient-grid {
   display: grid;
@@ -148,18 +184,31 @@
 
 /* Previsualización */
 .qr-preview-container {
-  text-align: center;
-  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+  /* Evita que se estire si la otra columna es más alta */
 }
 
 .qr-preview {
-  display: block;
-  position: fixed;
+  width: 100%;
+  max-width: 350px;
+  /* Limita el tamaño máximo en pantallas grandes */
   padding: 1rem;
-  /* background: white; */
+  background: white;
   border-radius: 12px;
   box-shadow: var(--shadow);
-  border: 1px dashed var(--border-color);
+  border: 1px solid var(--border-color);
+}
+
+/* Hacemos que el canvas generado sea responsivo */
+.qr-preview canvas {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
 }
 
 /* Toggle y controles */
@@ -305,6 +354,7 @@
   color: var(--text-color);
   width: 100px;
 }
+
 /* Controles de fondo avanzados */
 .advanced-background-options {
   margin-top: 1rem;
@@ -312,7 +362,9 @@
   border-top: 1px solid var(--border-color);
 }
 
-.gradient-control, .pattern-control, .corner-control {
+.gradient-control,
+.pattern-control,
+.corner-control {
   margin-bottom: 1.5rem;
 }
 
@@ -382,6 +434,54 @@
   margin-top: 1rem;
 }
 
-.gradient-control, .rotation-control {
+.gradient-control,
+.rotation-control {
   margin-bottom: 1rem;
+}
+
+/* Controles de descarga */
+.qr-download-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.download-options {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.qr-format-selector {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--section-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.qr-download-button {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.qr-download-button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+  .qr-container {
+    grid-template-columns: 1fr;
+  }
+
+  .qr-preview-container {
+    position: static;
+    /* Desactiva el sticky en móvil */
+    margin-bottom: 2rem;
+  }
 }

@@ -1,0 +1,11 @@
+.ad-container {
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 350px; /* Coincide con el tamaño del QR preview */
+  min-height: 100px; /* Altura mínima para evitar saltos de layout mientras carga */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--section-bg);
+  border-radius: 8px;
+}

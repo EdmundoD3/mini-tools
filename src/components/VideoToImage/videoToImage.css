@@ -1,0 +1,74 @@
+/* Video Settings Styles */
+.video-settings-container {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.setting-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.setting-item label {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.setting-item input[type="range"] {
+  width: 100%;
+}
+
+.setting-item input[type="number"] {
+  width: 80px;
+  padding: 0.25rem;
+}
+
+.preview-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a2a2e; /* Un fondo oscuro para el placeholder */
+  border-radius: 8px;
+  width: 100%;
+  position: relative; /* Necesario para el posicionamiento absoluto del loader */
+  min-height: 200px; /* Altura mínima inicial antes de que se calcule el aspect-ratio */
+  max-width: 720px; /* Límite para escritorio */
+  max-height: 720px; /* Límite para escritorio */
+  margin-inline: auto; /* Centra el contenedor */
+  overflow: hidden; /* Para que la imagen no se salga del borde redondeado */
+  margin-bottom: 1.5rem; /* Espacio antes de los settings */
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Asegura que toda la imagen sea visible sin deformarse */
+  display: block; /* Elimina espacio extra debajo de la imagen */
+  transition: opacity 0.2s ease-in-out; /* Transición suave para la opacidad */
+}
+
+.preview-loading {
+  /* Ocupa exactamente el mismo espacio que el contenedor padre */
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+}
+
+/* Cuando el contenedor está cargando, atenuamos la imagen que ya existe */
+.preview-container[data-loading="true"] .preview-image {
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .preview-container {
+    max-width: 600px; /* Límite más pequeño para móviles */
+    max-height: 600px;
+  }
+}

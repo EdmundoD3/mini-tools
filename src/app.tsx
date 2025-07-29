@@ -1,11 +1,17 @@
-import './app.css'
+import './App.css'
+import { Router, Route } from 'preact-router';
 import { QRCodeGenerator } from './components/QRCodeGenerator'
+import { VideoToImg } from './components/VideoToImage';
+import MainDiv from './ui/mainDiv';
 
 export function App() {
-  return (
-    <div class="app">
-      <h1>Generador de QR</h1>
-      <QRCodeGenerator />
-    </div>
-  );
+
+
+  return (<MainDiv>
+    <Router>
+      <Route path="/" component={QRCodeGenerator} />
+      <Route path="/video-to-image" component={VideoToImg} />
+    </Router>
+  </MainDiv>
+  )
 }
