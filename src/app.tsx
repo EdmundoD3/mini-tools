@@ -2,8 +2,8 @@ import './App.css'
 import { Router, Route } from 'preact-router';
 import { QRCodeGenerator } from './components/QRCodeGenerator'
 import { VideoToImg } from './components/VideoToImage'
-import { NotFound } from './components/NotFound';
-import { Redirect } from './components/Redirect';
+import { NotFound } from './components/route/NotFound';
+import { Redirect } from './components/route/Redirect';
 import MainDiv from './ui/mainDiv';
 
 export function App() {
