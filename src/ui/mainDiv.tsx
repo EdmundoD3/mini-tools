@@ -32,7 +32,7 @@ export default function MainDiv({ children }: { children: JSX.Element }) {
                 <p>{t('app.footer')}</p>
                 <div class="footer-NavLinks">
                     <a
-                        href="https://github.com/edoss-dev/mini-tools"
+                        href="https://github.com/EdmundoD3/mini-tools"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

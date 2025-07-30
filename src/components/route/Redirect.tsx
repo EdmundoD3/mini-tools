@@ -3,7 +3,7 @@ import { route } from 'preact-router';
 
 interface RedirectProps {
   to: string;
-  path?: string; // preact-router inyecta esta prop
+  path:string;
 }
 
 export function Redirect({ to }: RedirectProps) {

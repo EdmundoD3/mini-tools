@@ -48,5 +48,8 @@
   "video.generating_gif": "Generando GIF...",
   "video.settings.gif_quality": "Calidad del GIF",
   "video.settings.gif_quality_low": "Baja",
-  "video.settings.gif_quality_high": "Alta"
+  "video.settings.gif_quality_high": "Alta",
+  "app.title": "Mini Herramientas",
+  "app.footer": "© Mini Herramientas.",
+  "video.cancel_processing": "Cancelar Procesamiento"
 }

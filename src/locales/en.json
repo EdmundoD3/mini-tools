@@ -48,5 +48,8 @@
   "video.generating_gif": "Generating GIF...",
   "video.settings.gif_quality": "GIF Quality",
   "video.settings.gif_quality_low": "Low",
-  "video.settings.gif_quality_high": "High"
+  "video.settings.gif_quality_high": "High",
+  "app.title": "Mini Tools",
+  "app.footer": "© Mini Tools.",
+  "video.cancel_processing": "Cancel Processing"
 }

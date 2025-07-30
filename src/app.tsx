@@ -8,7 +8,6 @@ import MainDiv from './ui/mainDiv';
 
 export function App() {
 
-
   return (
     <MainDiv>
       <Router>
