@@ -1,6 +1,6 @@
 # Mini Tools - Una Colección de Utilidades Web
 
-![alt text](image.jpg)
+[**Ver la aplicación en vivo →**](https://mini-toolss.web.app/)
 
 **Mini Tools** es una aplicación web construida con Preact y Vite que ofrece una suite de herramientas pequeñas y eficientes para tareas cotidianas. Actualmente, la aplicación incluye un potente **Generador de Códigos QR** y un versátil **Extractor de Imágenes y GIF de Video**.
 

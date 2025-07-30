@@ -74,7 +74,7 @@ export function VideoToImg() {
             onLoadedMetadata={handleLoadedMetadata}
           />
         )}
-        <VideoUploader onUpload={handleFileSelect} />
+        <VideoUploader onUpload={handleFileSelect} videoSrc={videoUrl} />
         {isProcessing && format === "gif" && (
               <div class="progress-bar-container">
                 <p>{t("video.generating_gif")}</p>

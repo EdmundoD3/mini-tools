@@ -51,5 +51,8 @@
   "video.settings.gif_quality_high": "High",
   "app.title": "Mini Tools",
   "app.footer": "© Mini Tools.",
-  "video.cancel_processing": "Cancel Processing"
+  "video.cancel_processing": "Cancel Processing",
+  "video.upload_prompt": "Drag and drop a video here",
+  "video.upload_cta": "or click to select a file",
+  "video.change_video": "Change video"
 }

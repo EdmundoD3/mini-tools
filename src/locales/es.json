@@ -51,5 +51,8 @@
   "video.settings.gif_quality_high": "Alta",
   "app.title": "Mini Herramientas",
   "app.footer": "© Mini Herramientas.",
-  "video.cancel_processing": "Cancelar Proceso"
+  "video.cancel_processing": "Cancelar Proceso",
+  "video.upload_prompt": "Arrastra y suelta un video aquí",
+  "video.upload_cta": "o haz clic para seleccionar un archivo",
+  "video.change_video": "Cambiar video"
 }

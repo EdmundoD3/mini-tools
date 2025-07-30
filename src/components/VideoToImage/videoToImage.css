@@ -189,3 +189,95 @@
     order: -1;
   }
 }
+
+/* Video Uploader Styles */
+.video-uploader-container {
+  width: 100%;
+  max-width: 450px;
+  margin: 1rem auto;
+  position: relative;
+}
+
+.video-uploader-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2.5rem 1.5rem;
+  border: 2px dashed #4a4a52;
+  border-radius: 12px;
+  background-color: #2a2a2e;
+  color: #a0a0b0;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  text-align: center;
+}
+
+.video-uploader-label:hover {
+  background-color: #333338;
+  border-color: #673ab8;
+}
+
+.video-uploader-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  color: #6c757d;
+  transition: color 0.2s ease-in-out;
+}
+
+.video-uploader-label:hover .video-uploader-icon {
+  color: #673ab8;
+}
+
+.video-uploader-label p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.video-uploader-cta {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+/* Hide the actual file input */
+.video-uploader-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.video-uploader-container.is-dragging .video-uploader-label {
+  border-color: #8a63d2;
+  background-color: #3a334a;
+}
+
+/* Change Video Button Styles */
+.change-video-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.change-video-button {
+  background-color: #3a3a3a;
+  border: 1px solid #555;
+  color: #eee;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.change-video-button:hover {
+  background-color: #4a4a4a;
+  border-color: #673ab8;
+}
