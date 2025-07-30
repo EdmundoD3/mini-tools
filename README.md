@@ -53,14 +53,6 @@ Transforma tus videos en fotogramas individuales o GIFs animados con total contr
 - **qr-code-styling**: La librería que hace posible la magia de la personalización de los QR.
 - **gif.js**: Para la generación de GIFs animados en el navegador.
 
-## 🔮 Próximas Herramientas
-
-Esta aplicación crecerá para incluir más utilidades. Las próximas ideas incluyen:
-
-- **Generador de Paletas de Colores**: Extrae la paleta de colores principal de una imagen.
-- **Compresor de Imágenes**: Reduce el tamaño de tus imágenes sin perder demasiada calidad.
-
----
 
 ## 🏷️ SEO y Metadatos
 
