@@ -1,31 +1,32 @@
 # Mini Tools - Una Colección de Utilidades Web
 
- <!-- TODO: Reemplaza con una captura de tu app -->
+![alt text](image.jpg)
 
-**Mini Tools** es una aplicación web construida con Preact y Vite que ofrece una suite de herramientas pequeñas y eficientes para tareas cotidianas. La primera herramienta disponible es un potente **Generador de Códigos QR** con múltiples opciones de personalización.
+**Mini Tools** es una aplicación web construida con Preact y Vite que ofrece una suite de herramientas pequeñas y eficientes para tareas cotidianas. Actualmente, la aplicación incluye un potente **Generador de Códigos QR** y un versátil **Extractor de Imágenes y GIF de Video**.
 
-## ✨ Características del Generador de QR
+## 🛠️ Herramientas Disponibles
 
-Crea códigos QR únicos y atractivos con una amplia gama- de opciones de personalización:
+### ✨ Generador de Códigos QR
+
+Crea códigos QR únicos y atractivos con una amplia gama de opciones de personalización:
 
 - **Contenido Personalizable**: Genera códigos QR para URLs, texto, números de teléfono, o cualquier otra información.
-- **Estilo de Puntos**: Elige entre diferentes formas para los módulos del QR:
-  - Cuadrados
-  - Puntos redondos
-  - Bordes redondeados
-  - Estilo "classy"
-- **Colores y Degradados**:
-  - Selecciona un color sólido de una paleta predefinida o un selector de color.
-  - Aplica degradados lineales o radiales con rotación personalizable para un diseño más dinámico.
-- **Fondo**:
-  - Configura un color de fondo sólido.
-  - Haz el fondo transparente para superponer el QR en otras imágenes.
-  - ¡Próximamente: fondos con degradados y patrones!
-- **Logo o Imagen Central**:
-  - Añade tu logo o cualquier imagen en el centro del código QR.
-  - Ajusta el tamaño y el margen de la imagen para una integración perfecta.
-- **Descarga en Múltiples Formatos**:
-  - Descarga tu código QR en formatos de alta calidad: **PNG, JPEG, WEBP y SVG**.
+- **Estilo de Puntos**: Elige entre diferentes formas para los módulos del QR (cuadrados, puntos, bordes redondeados, etc.).
+- **Colores y Degradados**: Selecciona colores sólidos o aplica degradados lineales/radiales para un diseño dinámico.
+- **Fondo Personalizable**: Configura un color de fondo sólido o hazlo transparente para superponer el QR en otras imágenes.
+- **Logo o Imagen Central**: Añade tu logo o cualquier imagen en el centro del código QR, ajustando su tamaño y margen.
+- **Descarga en Múltiples Formatos**: Descarga tu código QR en formatos de alta calidad: **PNG, JPEG, WEBP y SVG**.
+
+### 🎥 Extractor de Imágenes y GIF de Video
+
+Transforma tus videos en fotogramas individuales o GIFs animados con total control:
+
+- **Selección de Rango**: Define con precisión el tiempo de inicio y fin del video para la extracción.
+- **Intervalo de Captura**: Configura cada cuántos segundos deseas capturar un fotograma.
+- **Generación de GIF**: Crea un GIF animado a partir de los fotogramas extraídos.
+- **Ajustes de GIF**: Personaliza la calidad y el retardo entre fotogramas para optimizar el resultado.
+- **Previsualización**: Observa una vista previa de los fotogramas que se generarán antes de procesar.
+- **¡Próximamente**: Descarga de fotogramas en ZIP y PDF!
 
 ## 🚀 Cómo Usarlo
 
@@ -44,18 +45,18 @@ Crea códigos QR únicos y atractivos con una amplia gama- de opciones de person
     ```
 4.  Abre tu navegador y visita `http://localhost:5173` (o el puerto que indique Vite).
 
-## 🛠️ Tecnologías Utilizadas
+## � Tecnologías Utilizadas
 
 - **Preact**: Una alternativa rápida y ligera a React con la misma API.
 - **Vite**: Un entorno de desarrollo de frontend moderno y ultrarrápido.
 - **TypeScript**: Para un código más robusto y mantenible.
 - **qr-code-styling**: La librería que hace posible la magia de la personalización de los QR.
+- **gif.js**: Para la generación de GIFs animados en el navegador.
 
 ## 🔮 Próximas Herramientas
 
 Esta aplicación crecerá para incluir más utilidades. Las próximas ideas incluyen:
 
-- **Extractor de Imágenes de Video**: Sube un video y extrae fotogramas en intervalos específicos.
 - **Generador de Paletas de Colores**: Extrae la paleta de colores principal de una imagen.
 - **Compresor de Imágenes**: Reduce el tamaño de tus imágenes sin perder demasiada calidad.
 
@@ -63,20 +64,9 @@ Esta aplicación crecerá para incluir más utilidades. Las próximas ideas incl
 
 ## 🏷️ SEO y Metadatos
 
-**Meta Título:** Mini Tools - Generador de QR Personalizado y Herramientas Web
+**Meta Título:** Mini Tools - Generador de QR Personalizado, Extractor de GIF y Herramientas Web
 
-**Meta Descripción:** Crea y personaliza códigos QR con logos, colores y degradados. Descarga en PNG, SVG y más. Una suite de herramientas web rápidas y gratuitas para tus necesidades diarias.
+**Meta Descripción:** Crea y personaliza códigos QR con logos y colores, o extrae fotogramas de videos para crear GIFs animados. Una suite de herramientas web rápidas y gratuitas para tus necesidades diarias.
 
 **Palabras Clave (Keywords):**
-`generador de qr`, `crear código qr`, `qr con logo`, `qr personalizado`, `qr online`, `qr gratis`, `qr code generator`, `custom qr code`, `qr con imagen`, `qr transparente`, `qr svg`, `herramientas web`, `mini tools`, `preact`, `vite`, `utilidades online`
-
-```
-
----
-
-Espero que estas mejoras y el `README.md` te sean de gran ayuda para tu proyecto. ¡Tiene mucho potencial!
-
-<!--
-[PROMPT_SUGGESTION]¿Cómo puedo añadir una nueva herramienta a la aplicación, como un extractor de imágenes de video, y agregar una ruta para ella?[/PROMPT_SUGGESTION]
-[PROMPT_SUGGESTION]Refactoriza los componentes de control del QR para que usen un estado global con `createContext` y `useContext` de Preact.[/PROMPT_SUGGESTION]
--->
+`generador de qr`, `crear código qr`, `qr con logo`, `qr personalizado`, `video a gif`, `extraer fotogramas de video`, `crear gif de video`, `qr online`, `qr gratis`, `qr code generator`, `custom qr code`, `video to gif`, `extract frames from video`, `qr con imagen`, `qr transparente`, `qr svg`, `herramientas web`, `mini tools`, `preact`, `vite`, `utilidades online`
