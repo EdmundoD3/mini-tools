@@ -20,7 +20,7 @@ export default function MainDiv({ children }: { children: JSX.Element }) {
                         {t('nav.qr_generator')}
                     </NavLink>
                     <NavLink activeClassName="active" href="/video-to-image">
-                        {t('nav.video_to_image')}
+                        {t('video.title')}
                     </NavLink>
                 </nav>
                 <div class="header-controls">

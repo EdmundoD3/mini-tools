@@ -55,7 +55,7 @@ function QRGeneratorOptions({ options, setOptions }: TQRControls) {
 
   return <div className="qr-options-container">
     {/* Sección de contenido */}
-    <div className="qr-section">
+    <div className="qr-section tool-panel">
       <label htmlFor={"qr-url"}>{t('content_label')}{" "}</label>
       <input
         id="qr-url"

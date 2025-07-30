@@ -1,10 +1,10 @@
+.buton-config {
+  width: 172px;
+  font-size: 0.95rem;
+}
 /* Video Settings Styles */
 .video-settings-container {
-  margin-top: 1.5rem;
-  padding: 1rem 1rem 1.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #3a3a3a;
-  border-radius: 8px;
+
   text-align: left;
 }
 
@@ -44,24 +44,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2a2a2e; /* Un fondo oscuro para el placeholder */
+  background-color: #2a2a2e;
+  /* Un fondo oscuro para el placeholder */
   border-radius: 8px;
   width: 100%;
-  position: relative; /* Necesario para el posicionamiento absoluto del loader */
-  min-height: 200px; /* Altura mínima inicial antes de que se calcule el aspect-ratio */
-  max-width: 720px; /* Límite para escritorio */
-  max-height: 720px; /* Límite para escritorio */
-  margin-inline: auto; /* Centra el contenedor */
-  overflow: hidden; /* Para que la imagen no se salga del borde redondeado */
-  margin-bottom: 1.5rem; /* Espacio antes de los settings */
+  position: relative;
+  /* Necesario para el posicionamiento absoluto del loader */
+  min-height: 200px;
+  /* Altura mínima inicial antes de que se calcule el aspect-ratio */
+  max-width: 720px;
+  /* Límite para escritorio */
+  max-height: 720px;
+  /* Límite para escritorio */
+  margin-inline: auto;
+  /* Centra el contenedor */
+  overflow: hidden;
+  /* Para que la imagen no se salga del borde redondeado */
+  margin-bottom: 1.5rem;
+  /* Espacio antes de los settings */
 }
 
 .preview-image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Asegura que toda la imagen sea visible sin deformarse */
-  display: block; /* Elimina espacio extra debajo de la imagen */
-  transition: opacity 0.2s ease-in-out; /* Transición suave para la opacidad */
+  object-fit: contain;
+  /* Asegura que toda la imagen sea visible sin deformarse */
+  display: block;
+  /* Elimina espacio extra debajo de la imagen */
+  transition: opacity 0.2s ease-in-out;
+  /* Transición suave para la opacidad */
 }
 
 .preview-loading {
@@ -81,7 +92,8 @@
 
 @media (max-width: 768px) {
   .preview-container {
-    max-width: 600px; /* Límite más pequeño para móviles */
+    max-width: 600px;
+    /* Límite más pequeño para móviles */
     max-height: 600px;
   }
 }
@@ -104,7 +116,7 @@
   appearance: none;
 }
 
-.format-selector{
+.format-selector {
   padding-bottom: 0.5rem;
 }
 
@@ -128,7 +140,52 @@
   background-color: #444;
   border: 1px solid #888;
 }
+
 .cancel-button:hover {
   background-color: #c53030;
   border-color: #c53030;
+}
+
+/* Layout Grid para la herramienta */
+.video-tool-container {
+  display: grid;
+  gap: 2rem;
+  /* Centra el contenido por defecto (útil para el estado de una sola columna) */
+  justify-items: center;
+  width: 100%;
+  /* Usamos un ancho máximo similar al generador de QR para consistencia */
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* En pantallas de escritorio, usamos dos columnas */
+@media (min-width: 769px) {
+
+  /* Aplica el layout de 2 columnas SÓLO si el contenedor de configuración existe */
+  .video-tool-container:has(.video-config-container) {
+    grid-template-columns: 1fr 1fr;
+    justify-items: initial;
+    /* Resetea el centrado para el layout de 2 columnas */
+  }
+
+  .video-preview-wrapper {
+    /* Hacemos que esta columna sea "pegajosa" */
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    /* Evita que se estire si la otra columna es más alta */
+  }
+}
+
+/* En pantallas móviles, volvemos a una sola columna */
+@media (max-width: 768px) {
+  .video-tool-container {
+    grid-template-columns: 1fr;
+  }
+
+  .video-preview-wrapper {
+    /* Movemos el preview y los resultados al principio en móvil para mejor UX */
+    order: -1;
+  }
 }

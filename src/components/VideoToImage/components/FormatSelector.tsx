@@ -13,7 +13,7 @@ export function FormatSelector({ selectedFormat, onChange }: Props) {
       <select
         value={selectedFormat}
         onChange={(e) => onChange((e.target as HTMLSelectElement).value as FormatType)}
-        class="border rounded px-2 py-1"
+        class=""
       >
         <option value="gif">GIF</option>
         <option value="pdf">PDF</option>

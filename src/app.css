@@ -1,3 +1,21 @@
+:root {
+  /* Tema oscuro (predeterminado) */
+  --background: #2a2a72;
+  --text-color: #f5f5f5;
+  --border-color: #383838;
+  --accent-color: #009ffd;
+  --section-bg: #282829;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.tool-panel {
+  width: 95%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem 1.5rem;
+  border: 1px solid #3a3a3a;
+  background-color: var(--section-bg);
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
 .app-wrapper {
   display: flex;
   flex-direction: column;
@@ -19,6 +37,10 @@
 }
 
 .app-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 90vw;
   flex-grow: 1;
   /* Ensures the main content takes up available space */

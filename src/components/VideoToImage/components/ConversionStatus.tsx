@@ -8,9 +8,9 @@ type Props = {
 
 export function ConversionStatus({ isProcessing, error }: Props): JSX.Element {
   return (
-    <div class="mt-4">
-      {isProcessing && <p class="text-yellow-600">Procesando video...</p>}
-      {error && <p class="text-red-600">Error: {error}</p>}
+    <div class="">
+      {isProcessing && <p class="">Procesando video...</p>}
+      {error && <p class="">Error: {error}</p>}
     </div>
   );
 }

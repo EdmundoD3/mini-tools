@@ -15,8 +15,8 @@ export function VideoUploader({ onUpload }: Props): JSX.Element {
   };
 
   return (
-    <div class="mb-4">
-      <label class="block text-sm font-medium mb-1" for="videoInput">
+    <div class="">
+      <label class="" for="videoInput">
         Subir video
       </label>
       <input
@@ -24,7 +24,7 @@ export function VideoUploader({ onUpload }: Props): JSX.Element {
         type="file"
         accept="video/*"
         onChange={handleChange}
-        class="border rounded px-2 py-1"
+        class=""
       />
     </div>
   );

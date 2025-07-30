@@ -73,7 +73,7 @@ export function QRBackgroundControls({ options, setOptions }: TQRControls) {
   };
 
   return (
-    <div className="qr-section">
+    <div className="qr-section tool-panel">
       <h3>{t('background_title')}</h3>
 
       <div className="background-controls">

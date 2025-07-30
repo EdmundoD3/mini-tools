@@ -6,6 +6,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--section-bg);
+  background-color: transparent;
   border-radius: 8px;
 }

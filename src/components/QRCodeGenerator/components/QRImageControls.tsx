@@ -66,7 +66,7 @@ export function QRImageControls({ options, setOptions }: TQRControls) {
   };
 
   return (
-    <div className="qr-section">
+    <div className="qr-section tool-panel">
       <h3>{t('image_title')}</h3>
 
       <div className="image-controls">

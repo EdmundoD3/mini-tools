@@ -32,12 +32,12 @@ export function VideoSettings({ duration, settings, onChange, onPreviewTimeChang
   };
 
   return (
-    <div class="video-settings-container">
-      <h3 class="text-lg font-semibold mb-2">{t('video.settings.title')}</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="video-settings-container tool-panel">
+      <h3 class="">{t('video.settings.title')}</h3>
+      <div class="">
         
         {/* Tiempo de Inicio */}
-        <div class="setting-item col-span-2">
+        <div class="setting-item">
           <label for="startTime">{t('video.settings.start_time')}</label>
           <div class="input-group">
             <input
@@ -56,7 +56,7 @@ export function VideoSettings({ duration, settings, onChange, onPreviewTimeChang
         </div>
 
         {/* Tiempo de Fin */}
-        <div class="setting-item col-span-2">
+        <div class="setting-item">
           <label for="endTime">{t('video.settings.end_time')}</label>
           <div class="input-group">
             <input
@@ -87,7 +87,7 @@ export function VideoSettings({ duration, settings, onChange, onPreviewTimeChang
         </div>
 
         {/* Calidad del GIF */}
-        <div class="setting-item col-span-2">
+        <div class="setting-item">
           <label for="gifQuality">{t('video.settings.gif_quality')}</label>
           <div class="input-group">
             <span>{t('video.settings.gif_quality_low')}</span>
