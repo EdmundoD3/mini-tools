@@ -8,7 +8,7 @@ type Props = {
 
 export function FormatSelector({ selectedFormat, onChange }: Props) {
   return (
-    <div class="flex gap-4 items-center">
+    <div class="format-selector">
       <label>Formato:</label>
       <select
         value={selectedFormat}

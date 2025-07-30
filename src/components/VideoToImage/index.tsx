@@ -18,12 +18,13 @@ export function VideoToImg() {
     endTime: 0,
     captureInterval: 1,
     gifDelay: 1000,
+    gifQuality: 10,
   });
   const [videoDuration, setVideoDuration] = useState(0);
   const [format, setFormat] = useState<"gif" | "pdf" | "zip">("gif");
   const [previewTime, setPreviewTime] = useState(0);
 
-  const { processVideo, result, isProcessing, error, reset } = useVideoProcessor(settings);
+  const { processVideo, result, isProcessing, progress, error, reset, cancelProcessing } = useVideoProcessor(settings);
 
   const videoUrl = useMemo(() => {
     if (videoFile) {
@@ -57,8 +58,8 @@ export function VideoToImg() {
     }));
   }, []);
   return (
-    <div class="max-w-3xl mx-auto px-4 py-6">
-      <h1 class="text-2xl font-bold mb-4">{t('video.title')}</h1>
+    <>
+      <h1 class="">{t('video.title')}</h1>
 
       <VideoUploader onUpload={handleFileSelect} />
 
@@ -80,13 +81,30 @@ export function VideoToImg() {
 
           <FormatSelector selectedFormat={format} onChange={setFormat} />
 
-          <button
-            onClick={handleProcess}
-            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
-            disabled={isProcessing}
-          >
-            {isProcessing ? t('video.processing') : t('video.process_button')}
-          </button>
+          <div class="process-buttons-container">
+            <button
+              onClick={handleProcess}
+              class="process-button"
+              disabled={isProcessing}
+            >
+              {isProcessing ? t('video.processing') : t('video.process_button')}
+            </button>
+            {isProcessing && (
+              <button
+                onClick={cancelProcessing}
+                class="cancel-button"
+              >
+                {t('video.cancel_processing')}
+              </button>
+            )}
+          </div>
+
+          {isProcessing && format === 'gif' && (
+            <div class="progress-bar-container">
+              <p>{t('video.generating_gif')}</p>
+              <progress class="progress-bar" value={progress} max="1"></progress>
+            </div>
+          )}
 
           {error && <p class="text-red-600 mt-2">{t('video.error_prefix', 'Error')}: {t(error)}</p>}
 
@@ -99,6 +117,6 @@ export function VideoToImg() {
           )}
         </>
       )}
-    </div>
+    </>
   );
 }

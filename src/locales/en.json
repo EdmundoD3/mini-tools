@@ -44,5 +44,9 @@
   "video.settings.start_time": "Start Time",
   "video.settings.end_time": "End Time",
   "video.settings.interval": "Capture Interval (s)",
-  "video.settings.gif_delay": "GIF Delay (ms)"
+  "video.settings.gif_delay": "GIF Delay (ms)",
+  "video.generating_gif": "Generating GIF...",
+  "video.settings.gif_quality": "GIF Quality",
+  "video.settings.gif_quality_low": "Low",
+  "video.settings.gif_quality_high": "High"
 }

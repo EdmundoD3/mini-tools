@@ -1,11 +1,11 @@
 // src/ui/DownloadButton.tsx
-type Props = {
+type DownloadButtonProps = {
   blob: Blob;
   filename: string;
   mimeType: string;
 };
 
-export function DownloadButton({ blob, filename, mimeType }: Props) {
+export function DownloadButton({ blob, filename, mimeType }: DownloadButtonProps) {
   const handleDownload = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -17,7 +17,7 @@ export function DownloadButton({ blob, filename, mimeType }: Props) {
 
   return (
     <button
-      class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+      class=""
       onClick={handleDownload}
     >
       Descargar {mimeType.split("/")[1].toUpperCase()}
